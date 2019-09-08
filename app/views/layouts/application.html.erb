@@ -38,84 +38,12 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div class="container">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo right">Logo</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a class="dropbtn dropdown-trigger" data-target="myDropdown" onclick="myFunction()">Account
-                    <i class="material-icons right">arrow_drop_down</i></a>
-                <div class="dropdown-cntnt" id="myDropdown">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-              </li>
-            </ul>
-            <ul class="sidenav" id="mobile-demo">
-              <li><a href="sass.html">Courses</a></li>
-              <li><a href="badges.html">Enrollments</a></li>
-              <li><a href="collapsible.html">Account</a></li>
-            </ul>
-        </div>
-        </div>
-      </nav>
-      <script>
-      /* When the user clicks on the button,
-      toggle between hiding and showing the dropdown content */
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(e) {
-          if (!e.target.matches('.dropbtn')) {
-          var myDropdown = document.getElementById("myDropdown");
-            if (myDropdown.classList.contains('show')) {
-              myDropdown.classList.remove('show');
-            }
-          }
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-           var elems = document.querySelectorAll('.sidenav');
-           var instances = M.Sidenav.init(elems, options);
-         });
-
-      </script>
-    </header>
+    <%= render 'layouts/navigation' %>
     <main>
       <div class="container">
         <%= yield %>
       </div>
     </main>
-        <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Tech University</h5>
-                <p class="grey-text text-lighten-4">The future of development training</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Information</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Tech University
-            <a class="grey-text text-lighten-4 right" href="#!">About</a>
-            </div>
-          </div>
-        </footer>
-
+    <%= render 'layouts/footer' %>
   </body>
 </html>
