@@ -12,7 +12,17 @@
           <span class="card-title">Name: <%= student.name %></span>
           <span class="card-content">Email: <%= student.email %></span>
           <div class="card-content">
-            <p>Course Enrollments: None</p>
+            <p>Course Enrollments:
+            <% if student.courses.empty? %>
+              None
+            <% else %>
+              <ul>
+                <% student.courses.each do |course| %>
+                  <li><%= course.name %>
+                <% end %>
+              </ul>
+            <% end %>
+            </p>
           </div>
         </div>
         <div class="card-action">
